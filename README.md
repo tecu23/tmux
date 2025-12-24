@@ -5,10 +5,13 @@ Personal tmux configuration with vim-style navigation and custom keybindings.
 ## Requirements
 
 ### Minimum Versions
+
+- **bash**: 4.0+ recommended for modern features
 - **tmux**: 2.1 or later (3.0+ recommended)
 - **git**: Any recent version for plugin management
 
 ### System Compatibility
+
 - macOS (tested on macOS Sonoma)
 - Linux (most distributions)
 - BSD systems
@@ -41,16 +44,19 @@ This configuration uses [TPM (Tmux Plugin Manager)](https://github.com/tmux-plug
 ### 1. Install tmux
 
 **macOS (Homebrew):**
+
 ```bash
 brew install tmux
 ```
 
 **Ubuntu/Debian:**
+
 ```bash
 sudo apt install tmux
 ```
 
 **Arch Linux:**
+
 ```bash
 sudo pacman -S tmux
 ```
@@ -64,11 +70,13 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ### 3. Clone this configuration
 
 If using as a standalone repo:
+
 ```bash
 git clone git@github.com:tecu23/tmux.git ~/.config/tmux
 ```
 
 If using as part of dotfiles (recommended):
+
 ```bash
 # This is handled by the dotfiles install script
 # See: https://github.com/tecu23/dotfiles-new
@@ -77,20 +85,25 @@ If using as part of dotfiles (recommended):
 ### 4. Install plugins
 
 Start tmux:
+
 ```bash
 tmux
 ```
 
 Inside tmux, install plugins:
+
 ```
 Ctrl+a I
 ```
+
 (That's prefix + capital I)
 
 ## Configuration Details
 
 ### Custom Prefix
+
 The default prefix (`Ctrl+b`) has been changed to `Ctrl+a` for easier access:
+
 ```
 Prefix: Ctrl+a
 ```
@@ -98,21 +111,25 @@ Prefix: Ctrl+a
 ### Key Bindings
 
 #### General
+
 - `Ctrl+a` - Prefix key
 - `Ctrl+a r` - Reload configuration
 - `Ctrl+a ?` - List all keybindings (default tmux binding)
 
 #### Window Navigation
+
 - `Alt+Shift+H` - Previous window (no prefix needed)
 - `Alt+Shift+L` - Next window (no prefix needed)
 
 #### Pane Navigation (vim-tmux-navigator)
+
 - `Ctrl+h` - Move to left pane
 - `Ctrl+j` - Move to lower pane
 - `Ctrl+k` - Move to upper pane
 - `Ctrl+l` - Move to right pane
 
 #### Pane Management (tmux-pain-control)
+
 - `Prefix + h/j/k/l` - Navigate panes
 - `Prefix + H/J/K/L` - Resize panes
 - `Prefix + |` - Split pane vertically
@@ -121,6 +138,7 @@ Prefix: Ctrl+a
 - `Prefix + >` - Move window right
 
 #### Session Logging (tmux-logging)
+
 - `Prefix + Shift+p` - Toggle logging
 - `Prefix + Alt+p` - Screenshot current pane
 - `Prefix + Alt+Shift+p` - Save complete pane history
@@ -139,16 +157,19 @@ set -g status-position top                   # Status bar at top
 ## Usage
 
 ### Starting tmux
+
 ```bash
 tmux
 ```
 
 ### Creating sessions
+
 ```bash
 tmux new -s session-name
 ```
 
 ### Attaching to sessions
+
 ```bash
 tmux attach -t session-name
 # or shorthand
@@ -156,12 +177,15 @@ tmux a -t session-name
 ```
 
 ### Listing sessions
+
 ```bash
 tmux ls
 ```
 
 ### Detaching from session
+
 Inside tmux:
+
 ```
 Ctrl+a d
 ```
@@ -169,26 +193,33 @@ Ctrl+a d
 ## Updating Plugins
 
 Inside tmux:
+
 ```
 Ctrl+a U
 ```
+
 (Prefix + capital U)
 
 ## Troubleshooting
 
 ### Colors not working properly
+
 Ensure your terminal supports 256 colors and true color. Add this to your shell config:
+
 ```bash
 export TERM=xterm-256color
 ```
 
 ### Plugins not loading
+
 1. Verify TPM is installed: `ls ~/.tmux/plugins/tpm`
 2. Inside tmux, reload config: `Ctrl+a r`
 3. Install plugins: `Ctrl+a I`
 
 ### Vim-tmux navigator not working
+
 Ensure you have the corresponding vim/neovim plugin installed:
+
 ```vim
 " For vim-plug
 Plug 'christoomey/vim-tmux-navigator'
